@@ -34,8 +34,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 100;
+    font-family: 'Space Mono', monospace;
 }
 
 hr.star-light,
@@ -68,6 +67,7 @@ hr.star-primary {
 
 .img-centered {
     margin: 0 auto;
+    border-radius: 100px;
 }
 
 .img-responsive {
@@ -81,7 +81,7 @@ hr.star-primary {
 
 header {
     text-align: center;
-    color: #fff;
+    color: #ffffff;
     background: #000000;
 }
 
@@ -96,30 +96,25 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #ffffff;
+    font-family: 'Space Mono', monospace;
     font-size: 3em;
-    font-weight: 100;
     padding-top: 1px;
 }
 
 header .intro-text .title {
     font-size: 1.25em;
-    font-weight: 100;
     text-transform: uppercase;
 }
 
 header .intro-text .sub {
-    font-size: 1.25em;
-    font-weight: 100;
-    text-transform: uppercase;
+    font-size: 1em;
     color: #BBDEFB;
 }
 
 @media(min-width:768px) {
     header .container {
         padding-top: 120px;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
     }
 
     header .intro-text .name {
@@ -261,12 +256,12 @@ footer .footer-below {
 
 .btn-social {
     display: inline-block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: 2px solid #fff;
-    border-radius: 100%;
+    border-radius: 1%;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 45px;
 }
 
