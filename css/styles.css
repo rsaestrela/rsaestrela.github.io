@@ -1,0 +1,104 @@
+html {
+  background: black;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+}
+
+p {
+  margin: 0;
+  padding-left: 10px;
+  padding-bottom: 6px;
+}
+
+.name {
+  display: block;
+  font-size: 2.05rem;
+  padding-bottom: 6px;
+}
+
+.title {
+  display:block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-bottom: 6px;
+}
+
+.company {
+  font-weight: normal;
+}
+
+.social-link {
+  background-color: black;
+  color: white;
+  padding-left: 0.5rem;
+}
+
+.link {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.profile-pic {
+  border: 1px solid white;
+  float: left;
+  width: 15rem;
+}
+
+.image {
+  float: left;
+  width: auto;
+}
+
+.info {
+  background-color: black;
+  border: 1px solid;
+  float: left;
+  height: auto;
+  margin-left: -0.3rem;
+  margin-top: 0.5rem;
+  padding-right: 0.5rem;
+  width: auto;
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    margin-left: 2%;
+    margin-top: 2%;
+    position: absolute;
+    width: auto;
+  }
+  .info {
+    margin-left: 0.3rem;
+    margin-top: -0.3rem;
+  }
+}
+
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  .container {
+    margin-left: 23%;
+    margin-top: 25%;
+    position: absolute;
+    width: auto;
+  }
+}
+
+@media only screen and (min-width: 961px) {
+  .container {
+    margin-left: 35%;
+    margin-top: 10%;
+    position: absolute;
+    width: 45rem;
+  }
+}
+
+
+
+
+
+
+
+
+
