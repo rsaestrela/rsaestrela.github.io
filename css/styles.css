@@ -1,96 +1,88 @@
 html {
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   font-family: 'Space Mono', monospace;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 p {
   margin: 0;
-  padding-left: 10px;
   padding-bottom: 6px;
+}
+
+.container {
+  position: absolute;
+  width: auto;
 }
 
 .name {
-  display: block;
-  font-size: 2.05rem;
-  padding-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
 }
 
 .title {
-  display:block;
+  display: block;
   font-size: 1.2rem;
-  font-weight: bold;
-  padding-bottom: 6px;
 }
 
-.company {
-  font-weight: normal;
+.social-container {
+  margin-top: .5rem;
+  margin-bottom: 1rem;
 }
 
 .social-link {
   background-color: black;
   color: white;
-  padding-left: 0.5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 
-.link {
-  background-color: white;
-  color: black;
+.email {
+  background-color: black;
+  color: white;
   cursor: pointer;
   text-decoration: underline;
-}
-
-.profile-pic {
-  border: 1px solid white;
-  float: left;
-  width: 15rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 
 .image {
+  border-radius: 50%;
+  float: left;
+  width: 20rem;
+}
+
+.image-container {
   float: left;
   width: auto;
 }
 
 .info {
-  background-color: black;
-  border: 1px solid;
   float: left;
   height: auto;
-  margin-left: -0.3rem;
-  margin-top: 0.5rem;
-  padding-right: 0.5rem;
   width: auto;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
 @media only screen and (max-width: 400px) {
   .container {
     margin-left: 2%;
     margin-top: 2%;
-    position: absolute;
-    width: auto;
-  }
-  .info {
-    margin-left: 0.3rem;
-    margin-top: -0.3rem;
   }
 }
 
 @media only screen and (min-width: 401px) and (max-width: 960px) {
   .container {
-    margin-left: 23%;
-    margin-top: 25%;
-    position: absolute;
-    width: auto;
+    margin-left: 3%;
+    margin-top: 15%;
   }
 }
 
 @media only screen and (min-width: 961px) {
   .container {
-    margin-left: 35%;
+    margin-left: 25%;
     margin-top: 10%;
-    position: absolute;
-    width: 45rem;
   }
 }
 
