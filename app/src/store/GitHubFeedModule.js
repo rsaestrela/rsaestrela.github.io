@@ -9,26 +9,31 @@ const moduleState = Object.assign({}, defaultState);
 
 const mutations = {
   addCommits(state, persist) {
-    const updated = [...state.commits];
     const repositoryCommits = persist.response.map(payload => { 
         return {
             repository: persist.repo,
-            sha: payload.commit.tree.sha.substr(payload.commit.tree.sha - 5),
             url: payload.html_url,
             date: payload.commit.author.date,
             message: payload.commit.message
         }
-    }).filter(commit => !commit.message.startsWith("Merge")).slice(0,3)
+    })
+    .filter(commit => !commit.message.startsWith("Merge") && commit.message != "automated deployment")
+    const updated = [...state.commits];
     updated.push(...repositoryCommits)
-    Vue.set(state, 'commits', updated);
+    updated.sort(function(a,b){
+      return new Date(b.date) - new Date(a.date);
+    });
+    Vue.set(state, 'commits', updated.slice(0, 3));
   },
 };
 
 const actions = {
-  async getCommits({ commit, state }, repo) {
+  async getCommits({ commit, state }, repos) {
     try {
-      const response = await getCommits(repo);
-      commit('addCommits', { response, repo });
+      for (var repo of repos) {
+        const response = await getCommits(repo);
+        commit('addCommits', { response, repo });
+      }
     } catch (ex) {
       //Vue.$log.warn(ex);
     }

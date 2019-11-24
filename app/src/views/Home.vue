@@ -5,7 +5,7 @@
         <img class="profile-image" src="@/assets/profile_image.png"/>
       </div>
       <div class="container">
-      <h1 class="name"> {{ name }} <span class="profile-user">@rsaestrela</span> </h1>
+      <h1 class="name"> {{ name }}</h1>
       <span class="title">{{ currentPosition }} @ {{ currentCompany }}</span>
       <div class="social-container">
         <span class="link" v-for="socialLink in socialLinks" v-bind:key="socialLink.service">
@@ -85,11 +85,6 @@ p {
   font-size: 1.5rem;
   text-transform: uppercase;
   margin-bottom: 0;
-}
-
-.profile-user {
-  font-size: 1rem;
-  text-transform: none;
 }
 
 .title {

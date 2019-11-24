@@ -4,7 +4,7 @@
     <a class="update-clickable" v-for="commit in commits" v-bind:key="commit.message" :href="commit.url">
       <div class="update">
         <img class="update-logo" src="../assets/github_logo.png"/>
-        <span class="update-header">{{ commit.date.substr(0, 10) }} - {{ commit.repository }} @ {{ commit.sha.substr(commit.sha.length - 5) }} </span>
+        <span class="update-header">{{ commit.date.substr(0, 10) }} - {{ commit.repository }} </span>
         <span class="update-description">* {{ commit.message }}</span>
       </div>
     </a>
@@ -32,7 +32,7 @@ export default {
     ...mapActions('GitHubFeedModule', ['getCommits']),
   },
   async created() {
-    await this.getCommits('contentx')
+    await this.getCommits(['contentx', 'rsaestrela.github.io'])
   }
 }
 </script>
