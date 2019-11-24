@@ -2,7 +2,7 @@
   <div class="profile-container">
     <div class="wrapper">
       <div class="container photo">
-        <img class="image" src="../assets/profile_image.png"/>
+        <img class="image" src="@/assets/profile_image.png"/>
       </div>
       <div class="container info">
       <h1 class="name"> {{ name }} <span class="profile-user">@rsaestrela</span> </h1>
@@ -65,7 +65,6 @@ export default {
     ...mapActions('GitHubFeedModule', ['getCommits']),
   },
   async created() {
-    //TODO get from more repositories
     await this.getCommits('contentx')
   }
 }
@@ -211,7 +210,7 @@ p {
     }
   }
   .update {
-    width: 300px;
+    width: 100%;
   }
 }
 
