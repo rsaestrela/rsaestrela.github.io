@@ -32,7 +32,7 @@ export default {
     ...mapActions('GitHubFeedModule', ['getCommits']),
   },
   async created() {
-    await this.getCommits(['contentx', 'rsaestrela.github.io'])
+    await this.getCommits(['contentx', 'rsaestrela.github.io', 'message-to-the-world'])
   }
 }
 </script>
