@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import { getCommits } from '../service/gh/getCommits';
+import { reposIndex } from '../config/reposIndex';
 
 const defaultState = {
   commits: [],
@@ -28,9 +29,9 @@ const mutations = {
 };
 
 const actions = {
-  async getCommits({ commit, state }, repos) {
+  async getCommits({ commit, state }) {
     try {
-      for (var repo of repos) {
+      for (var repo of reposIndex) {
         const response = await getCommits(repo);
         commit('addCommits', { response, repo });
       }

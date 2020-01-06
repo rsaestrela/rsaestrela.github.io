@@ -1,6 +1,6 @@
 <template>
   <div class="container updates">
-    <span class="updates-title">feed</span>
+    <h4 class="updates-title">feed</h4>
     <a class="update-clickable" v-for="commit in commits" v-bind:key="commit.message" :href="commit.url">
       <div class="update">
         <img class="update-logo" src="../assets/github_logo.png"/>
@@ -8,7 +8,7 @@
         <span class="update-description">* {{ commit.message }}</span>
       </div>
     </a>
-    <span class="link"><a class="text" :href="githubUrl" target="_blank">more</a></span>
+    <span class="link"><a class="text" :href="ghLink" target="_blank">more</a></span>
   </div>
 </template>
 
@@ -17,22 +17,23 @@ import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Feed',
-  props: {
-    githubUrl: {
-      type: String,
-      required: true
-    },
+  data() {
+    return {
+      ghLink: null,
+    }
   },
   computed: {
     ...mapGetters({
       commits: 'GitHubFeedModule/commits',
+      socialLink: 'SocialLinksModule/socialLink',
     }),
   },
   methods: {
     ...mapActions('GitHubFeedModule', ['getCommits']),
   },
   async created() {
-    await this.getCommits(['contentx', 'rsaestrela.github.io', 'message-to-the-world'])
+    await this.getCommits()
+    this.ghLink = await this.socialLink('GitHub').url
   }
 }
 </script>
@@ -45,7 +46,7 @@ export default {
   box-sizing: border-box;
   box-shadow: 2px 3px 0px black;
   margin-bottom: 1rem;
-  width: 380px;
+  width: 325px;
 }
 
 .update-clickable {
@@ -53,11 +54,16 @@ export default {
   text-decoration: none;
 }
 
+.updates {
+  float: right;
+}
+
 .updates-title {
+  font-size: 0.9rem;
   display: block;
-  font-weight: bold;
-  padding-bottom: 0.5rem;
   text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  border-radius: 3px;
 }
 
 .update-logo {
