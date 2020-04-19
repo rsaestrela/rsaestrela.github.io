@@ -52,7 +52,7 @@ export default {
 }
 
 .topic-clickable {
-  color: black;
+  color: #24292e;
   text-decoration: none;
 }
 

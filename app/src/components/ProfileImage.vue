@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img class="profile-image" :class="{ 'minified' : minify }" @click="home" src="@/assets/profile_image.png"/>
+    <div class="profile-image" :class="{ 'minified' : minify }" @click="home"/>
   </div>
 </template>
 
@@ -27,13 +27,17 @@ export default {
 <style scoped lang="scss">
 
 .profile-image {
-  border: 3px solid black;
+  background: url("../assets/profile_image.png") no-repeat;
+  background-size: 100% 100%;
+  border: 3px solid #24292e;
   border-radius: 50%;
+  height: 14rem;
   width: 14rem;
 }
 
 .minified {
-  border: 2px solid black;
+  border: 2px solid #24292e;
+  height: 6rem;
   width: 6rem;
   cursor: pointer;
 }

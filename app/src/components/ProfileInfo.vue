@@ -12,10 +12,9 @@
     </div>
     <div v-if="extendedInfo">
       <p>Born in 1989</p>
-      <p>From: Porto 🇵🇹</p>
-      <p>Living in: {{ currentCity }} 🇪🇸</p>
-      <p>Mother tongue: Portuguese</p>
-      <p>E-mail: <a href="mailto:rsaestrela@gmail.com" class="email">rsaestrela@gmail.com</a></p>
+      <p>From Porto 🇵🇹</p>
+      <p>📍{{ currentCity }} 🇪🇸</p>
+      <p><a href="mailto:rsaestrela@gmail.com" class="email">rsaestrela@gmail.com</a></p>
     </div>
   </div>
 </template>
@@ -57,9 +56,9 @@ export default {
 <style scoped lang="scss">
 
 p {
+  font-size: 0.9rem;
   margin: 0;
   padding-bottom: .5rem;
-  font-size: 0.8rem;
 }
 
 .name {

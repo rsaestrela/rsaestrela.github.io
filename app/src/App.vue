@@ -19,20 +19,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: white;
-  color: black;
+  color: #24292e;
 }
 
 .link {
-  border: 1px solid black;
+  border: 2px solid #24292e;
   border-radius: 2px;
-  box-shadow: 2px 3px 0px black;
+  box-shadow: 2px 3px 0px #24292e;
   text-transform: uppercase;
   margin-right: 10px;
   padding-left: .2rem;
   padding-right: .2rem;
   .text {
-    color: black;
-    font-size: .9rem;
+    color: #24292e;
     text-decoration: none;
   } 
 }

@@ -17,11 +17,10 @@ const mutations = {
             date: payload.commit.author.date,
             message: payload.commit.message
         }
-    })
-    .filter(commit => !commit.message.startsWith("Merge") && commit.message != "automated deployment")
+    }).filter(commit => !commit.message.startsWith("Merge") && commit.message != "automated deployment")
     const updated = [...state.commits];
     updated.push(...repositoryCommits)
-    updated.sort(function(a,b){
+    updated.sort(function(a, b){
       return new Date(b.date) - new Date(a.date);
     });
     Vue.set(state, 'commits', updated.slice(0, 3));
