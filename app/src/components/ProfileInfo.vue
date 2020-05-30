@@ -2,19 +2,13 @@
   <div class="container">
     <h1 class="name"> {{ name }}</h1>
     <div class="title">
-      <span>{{ currentPosition }}</span>
+      <span class="position">{{ currentPosition }}</span>
       <span v-if="currentCompany"> @ {{ currentCompany }}</span>
     </div>
     <div class="social-container">
-      <span class="link" v-for="socialLink in socialLinks" v-bind:key="socialLink.service">
+      <span class="link" v-for="socialLink in socialLinks" v-bind:key="socialLink.service" @click="raiseSocialLinkEvent(socialLink.service)">
         <a class="text" :href="socialLink.url" target="_blank">{{ socialLink.service }}</a>
       </span>
-    </div>
-    <div v-if="extendedInfo">
-      <p>Born in 1989</p>
-      <p>From Porto 🇵🇹</p>
-      <p>📍{{ currentCity }} 🇪🇸</p>
-      <p><a href="mailto:rsaestrela@gmail.com" class="email">rsaestrela@gmail.com</a></p>
     </div>
   </div>
 </template>
@@ -34,7 +28,7 @@ export default {
   data() {
     return {
       name: 'Raul Estrela',
-      currentPosition: 'Java Developer',
+      currentPosition: 'Software Engineer',
       currentCompany: '',
       currentCity: 'Barcelona',
     }
@@ -46,6 +40,9 @@ export default {
   },
   methods: {
     ...mapActions('SocialLinksModule', ['loadSocialLinks']),
+    raiseSocialLinkEvent(service) {
+      this.$ga.event('link', 'click', 'label', service);
+    }
   },
   async created() {
     await this.loadSocialLinks();
@@ -55,17 +52,13 @@ export default {
 
 <style scoped lang="scss">
 
-p {
-  font-size: 0.9rem;
-  margin: 0;
-  padding-bottom: .5rem;
-}
-
 .name {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  line-height: 2rem;
   text-transform: uppercase;
   margin-bottom: 0;
   margin-top: 0;
+  user-select: none;
 }
 
 .title {
@@ -74,21 +67,30 @@ p {
   margin-right: 1rem;
 }
 
+.position {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 0;
+  user-select: none;
+}
+
 .social-container {
   margin-bottom: .8rem;
   margin-top: .5rem;
-}
-
-.email {
-  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
   p {
     font-size: 0.8rem;
   }
+  .name {
+    margin-top: 0.5rem;
+  }
   .title {
     font-size: 0.8rem;
+  }
+  .position {
+    font-size: 1.3rem;
   }
 }
 
