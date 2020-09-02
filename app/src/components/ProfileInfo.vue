@@ -6,6 +6,9 @@
       <span v-if="currentCompany"> @ {{ currentCompany }}</span>
     </div>
     <div class="social-container">
+      <span class="link blog">
+        <a class="text" href="/blog" target="_blank">blog</a>
+      </span>
       <span class="link" v-for="socialLink in socialLinks" v-bind:key="socialLink.service" @click="raiseSocialLinkEvent(socialLink.service)">
         <a class="text" :href="socialLink.url" target="_blank">{{ socialLink.service }}</a>
       </span>
@@ -77,6 +80,10 @@ export default {
 .social-container {
   margin-bottom: .8rem;
   margin-top: .5rem;
+}
+
+.blog {
+  border-color: rgb(133, 255, 189);
 }
 
 @media (max-width: 600px) {
