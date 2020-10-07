@@ -83,7 +83,7 @@ export default {
 }
 
 .blog {
-  border-color: rgb(133, 255, 189);
+  background-color: rgb(231, 255, 242);
 }
 
 @media (max-width: 600px) {
