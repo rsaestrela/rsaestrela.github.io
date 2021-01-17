@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <h4 v-if="commitsAvailable" class="updates-title">feed</h4>
-    <a class="update-clickable" v-for="commit in commits" v-bind:key="commit.message" :href="commit.url">
+    <div class="updates-header-container">
+      <span class="github-logo"/>
+      <div v-if="commitsAvailable" class="updates-title">feed</div>
+    </div>
+    <a class="update-clickable" v-for="commit in commits" v-bind:key="commit.message" :href="commit.url" target="_blank">
       <div class="update">
         <span class="update-header">{{ commit.date.substr(0, 10) }} - {{ commit.repository }} </span>
         <span class="update-description">* {{ commit.message }}</span>
       </div>
     </a>
-    <span v-if="commitsAvailable" class="link">
-      <a class="text" :href="ghLink" target="_blank">more</a>
-    </span>
   </div>
 </template>
 
@@ -18,11 +18,6 @@ import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Feed',
-  data() {
-    return {
-      ghLink: null,
-    }
-  },
   computed: {
     ...mapGetters({
       commits: 'GitHubFeedModule/commits',
@@ -36,8 +31,7 @@ export default {
     ...mapActions('GitHubFeedModule', ['getCommits']),
   },
   async created() {
-    await this.getCommits()
-    this.ghLink = await this.socialLink('GitHub').url;
+    await this.getCommits();
   }
 }
 </script>
@@ -45,26 +39,42 @@ export default {
 <style scoped lang="scss">
 
 .updates-title {
+  border-radius: $border-radius-small;
+  display: inline-block;
+  line-height: 2.5rem;
   font-size: 1.2rem;
-  display: block;
+  font-weight: bold;
   text-transform: uppercase;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 3px;
+}
+
+.updates-header-container {
+  display: block;
+  height: 45px;
+}
+
+.github-logo {
+  display: block;
+  background: url("../assets/github_logo.png") no-repeat;
+  background-size: 100% 100%;
+  border-radius: 2%;
+  float: left;
+  height: 2rem;
+  margin: 5px;
+  width: 2rem;
 }
 
 .update {
-  background-color: white;
-  border: 2px solid #24292e;
-  border-radius: 3px;
+  background-color: $white;
+  border: $border-regular solid $grayish;
+  border-radius: $border-radius-small;
   box-sizing: border-box;
-  box-shadow: 2px 3px 0px #24292e;
+  box-shadow: 2px 2px 0px $grayish;
   margin-bottom: 1rem;
-  width: 400px;
+  width: 300px;
 }
 
 .update-clickable {
-  color: #24292e;
+  color: $grayish;
   text-decoration: none;
 }
 §
@@ -75,16 +85,16 @@ export default {
 }
 
 .update-header {
-  font-size: 0.8rem;
-  margin-left: .5rem;
-  color: #24292e;
+  color: $grayish;
   font-weight: bold;
+  font-size: 0.8rem;
+  padding-left: .5rem;
 }
 
 .update-description {
   display: block;
   font-size: 0.9rem;
-  margin-left: .5rem;
+  padding-left: .5rem;
   margin-bottom: 0.4rem;
 }
 

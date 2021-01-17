@@ -1,8 +1,13 @@
 <template>
-  <div class="home-container">
-    <ProfileImage/>
-    <ProfileInfo/>
-    <Feed/>
+  <div class="site-container">
+    <div class="top-container">
+      <ProfileImage/>
+      <ProfileInfo/>
+    </div>
+    <div>
+      <Blog/>
+      <Feed/>
+    </div>
   </div>
 </template>
 
@@ -11,11 +16,13 @@ import { mapActions, mapGetters } from 'vuex';
 import ProfileInfo from '@/components/ProfileInfo.vue'
 import ProfileImage from '@/components/ProfileImage.vue'
 import Feed from '@/components/Feed.vue'
+import Blog from '@/components/Blog.vue'
 
 export default {
   name: 'Home',
   components: {
     Feed,
+    Blog,
     ProfileInfo,
     ProfileImage
   },
@@ -24,11 +31,17 @@ export default {
 
 <style scoped lang="scss">
 
-.home-container {
+.top-container {
+  display: block;
+  height: 170px;
+}
+
+.site-container {
   align-items: center;
-  border-radius: 5px;
+  border-radius: $border-radius-big;
   margin: 0 auto;
   width: 700px;
+  margin-top: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -38,7 +51,7 @@ export default {
     justify-content: flex-end;
     flex-wrap: wrap;
   }
-  .home-container {
+  .site-container {
     max-width: 100%;
   }
 }

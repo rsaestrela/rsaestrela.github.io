@@ -22,11 +22,11 @@ export default {
 .profile-image {
   background: url("../assets/profile_image.png") no-repeat;
   background-size: 100% 100%;
-  border: 2px solid #24292e;
-  border-radius: 2%;
-  height: 16rem;
-  width: 16rem;
+  border: $border-regular solid $grayish;
+  border-radius: $border-radius-regular;
   cursor: pointer;
+  height: 10rem;
+  width: 10rem;
 }
 
 </style>

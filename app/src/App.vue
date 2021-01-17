@@ -18,7 +18,7 @@ body {
   font-family: 'Space Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #24292e;
+  color: $grayish;
   margin: 0;
 }
 
@@ -26,20 +26,21 @@ body {
   height: 100vh;
   box-sizing: border-box;
   margin-top: 1rem;
+
 }
 
 .link {
-  border: 2px solid #24292e;
-  border-radius: 2px;
-  box-shadow: 2px 3px 0px #24292e;
+  background-color: $white;
+  border: $border-regular solid $grayish;
+  box-shadow: 2px 2px 0px $grayish;
   text-transform: uppercase;
-  margin-right: 10px;
+  margin-right: 0.65rem;
   padding-left: .3rem;
   padding-right: .3rem;
-  border-radius: 3px;
+  border-radius: $border-radius-small;
   .text {
     font-size: 1.2rem;
-    color: #24292e;
+    color: $grayish;
     text-decoration: none;
   } 
 }

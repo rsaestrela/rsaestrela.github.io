@@ -82,10 +82,6 @@ export default {
   margin-top: .5rem;
 }
 
-.blog {
-  background-color: rgb(231, 255, 242);
-}
-
 @media (max-width: 600px) {
   p {
     font-size: 0.8rem;
