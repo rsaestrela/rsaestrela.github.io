@@ -10,8 +10,13 @@ const socialLinks = [
         enabled: true
     },
     { 
-        service: 'dev.to',
-        url: 'https://dev.to/rsaestrela',
+        service: 'gitbook',
+        url: 'https://raul-estrela.gitbook.io/things/',
+        enabled: true
+    },
+    { 
+        service: 'blog',
+        url: 'https://estrela.me/blog/',
         enabled: true
     }
 ]

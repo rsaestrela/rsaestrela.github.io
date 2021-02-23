@@ -23,7 +23,7 @@ const mutations = {
     updated.sort(function(a, b){
       return new Date(b.date) - new Date(a.date);
     });
-    Vue.set(state, 'commits', updated.slice(0, 3));
+    Vue.set(state, 'commits', updated.slice(0, 6));
   },
 };
 

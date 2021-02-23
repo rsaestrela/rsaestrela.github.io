@@ -41,7 +41,7 @@ export default {
 .updates-title {
   border-radius: $border-radius-small;
   display: inline-block;
-  line-height: 2.5rem;
+  line-height: 2.4rem;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -58,9 +58,9 @@ export default {
   background-size: 100% 100%;
   border-radius: 2%;
   float: left;
-  height: 2rem;
+  height: 1.6rem;
   margin: 5px;
-  width: 2rem;
+  width: 1.6rem;
 }
 
 .update {
