@@ -3,7 +3,6 @@
     <h1 class="name"> {{ name }}</h1>
     <div class="title">
       <span class="position">{{ currentPosition }}</span>
-      <span v-if="currentCompany"> @ {{ currentCompany }}</span>
     </div>
     <div class="social-container">
       <span class="link" v-for="socialLink in socialLinks" v-bind:key="socialLink.service" @click="raiseSocialLinkEvent(socialLink.service)">
@@ -18,19 +17,10 @@ import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'ProfileInfo',
-  props: {
-    extendedInfo: {
-      type: Boolean,
-      required: false,
-      default: true
-    },
-  },
   data() {
     return {
       name: 'Raul Estrela',
-      currentPosition: 'Software Engineer',
-      currentCompany: '',
-      currentCity: 'Barcelona',
+      currentPosition: 'Software Engineer'
     }
   },
   computed: {
@@ -53,7 +43,7 @@ export default {
 <style scoped lang="scss">
 
 .name {
-  font-size: 1.7rem;
+  font-size: 2rem;
   line-height: 2rem;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -63,14 +53,12 @@ export default {
 
 .title {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-right: 1rem;
 }
 
 .position {
   text-transform: uppercase;
-  margin-bottom: 0;
-  margin-top: 0;
   user-select: none;
 }
 
@@ -85,9 +73,11 @@ export default {
   }
   .name {
     margin-top: 0.5rem;
+    font-size: 1.8rem;
   }
   .title {
     font-size: 0.8rem;
+    font-size: .5rem;
   }
   .position {
     font-size: 1.3rem;

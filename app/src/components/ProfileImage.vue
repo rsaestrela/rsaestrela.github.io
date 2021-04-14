@@ -1,19 +1,13 @@
 <template>
   <div class="container">
-    <div class="profile-image" @click="home"/>
+    <div class="profile-image"/>
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
 
 export default {
-  name: 'ProfileInfo',
-  methods: {
-    home() {
-      this.$router.push({ name: 'home' }) 
-    }
-  }
+  name: 'ProfileImage'
 }
 </script>
 
@@ -25,8 +19,15 @@ export default {
   border: $border-regular solid $grayish;
   border-radius: $border-radius-regular;
   cursor: pointer;
-  height: 10rem;
-  width: 10rem;
+  height: 11rem;
+  width: 11em;
+}
+
+@media (max-width: 600px) {
+  .profile-image {
+    height: 8rem;
+    width: 8em;
+  }
 }
 
 </style>

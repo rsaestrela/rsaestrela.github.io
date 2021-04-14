@@ -1,5 +1,5 @@
 <template>
-  <div id="site">
+  <div class="site">
     <router-view/>
   </div>
 </template>
@@ -22,11 +22,19 @@ body {
   margin: 0;
 }
 
-#site {
-  height: 100vh;
+.site {
+  height: 70vh;
   box-sizing: border-box;
-  margin-top: 1rem;
-
+  display:-webkit-flex;
+  display: flex;
+  -webkit-flex-wrap :wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-align-content: center;
+  align-content: center;
 }
 
 .link {
@@ -46,14 +54,16 @@ body {
 }
 
 .container {
-  float: left;
   margin-left: .4rem;
   margin-right: .4rem;
 }
 
 @media (max-width: 600px) {
+  .site {
+    height: 40vh;
+  }
   .container {
-    width: 100%;
+    width: 90%;
   }
 }
 
